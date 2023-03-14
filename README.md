@@ -56,10 +56,16 @@ $user->assignRole('user');
 ## gitflow cmd
 
 ```sh
-- git-flow init
+- git flow init
 
 # create feature branch with name boilerplate based on development
-- git-flow feature start boilerplate
+- git flow feature start boilerplate
+
+# finish boilerplate
+- git flow feature finish boilerplate
+
+# start release
+- git flow release start v0.1.0 => means v(major, standard, small)
 ```
 
 ## License
