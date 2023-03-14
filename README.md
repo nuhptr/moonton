@@ -15,6 +15,53 @@
 - git-flow
 ```
 
+## Dependencies
+
+```sh
+# breeze
+$ composer require laravel/breeze --dev
+$ php artisan breeze:install
+
+# spatie
+$ composer require spatie/laravel-permission
+- add in config/app.php (services line)
+  Spatie\Permission\PermissionServiceProvider::class,
+$ php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+$ php artisan config:clear
+$ php artisan migrate
+
+# spatie seeder
+$ php artisan make:seeder RoleTableSeeder
+$ php artisan db:seed
+
+$ php artisan make:seeder UserTableSeeder
+fill the seeder and write
+use App\Models\User;
+$admin->assignRole('admin');
+$ php artisan migrate:fresh --seed
+
+# assignRole
+# User.php
+use Spatie\Permission\Traits\HasRoles;
+use ..., HasRoles;
+
+# RegisteredUserController.php
+$user->assignRole('user');
+
+# spatie middleware
+# add in kernel.php
+'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
+```
+
+## gitflow cmd
+
+```sh
+- git-flow init
+
+# create feature branch with name boilerplate based on development
+- git-flow feature start boilerplate
+```
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
