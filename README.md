@@ -59,13 +59,16 @@ $user->assignRole('user');
 - git flow init
 
 # create feature branch with name boilerplate based on development
-- git flow feature start boilerplate
+$ git flow feature start boilerplate
 
 # finish boilerplate
-- git flow feature finish boilerplate
+$ git flow feature finish boilerplate
 
 # start release
-- git flow release start v0.1.0 => means v(major, standard, small)
+$ git flow release start v0.1.0 => means v(major, standard, small)
+
+# push
+$ git push origin --tags
 ```
 
 ## License
