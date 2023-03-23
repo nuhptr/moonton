@@ -21,6 +21,7 @@
 # breeze
 $ composer require laravel/breeze --dev
 $ php artisan breeze:install
+- choose the framework associate with laravel
 
 # spatie
 $ composer require spatie/laravel-permission
@@ -51,6 +52,9 @@ $user->assignRole('user');
 # spatie middleware
 # add in kernel.php
 'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
+
+# proptypes
+npm install --save prop-types
 ```
 
 ## gitflow cmd
